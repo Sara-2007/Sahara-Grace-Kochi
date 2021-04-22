@@ -1,10 +1,13 @@
 import React, { useEffect } from "react"
 
+import sgkochi from "./images/SaharaGraceKochi.jpg"
+
 function MainContent() {
     return (
         <>
             <div className="container">
-                <h1>Hello!</h1>
+                <br />
+                <img src={sgkochi} />
             </div>
         </>
     )
