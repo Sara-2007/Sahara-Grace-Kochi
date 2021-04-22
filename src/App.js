@@ -19,7 +19,7 @@ function App() {
                     <Header />
                     <MainContent />
                 </Route>
-                <Route path="/contact">
+                <Route path="contact">
                     <Contact />
                 </Route>
             </Switch>
