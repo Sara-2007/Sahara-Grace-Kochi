@@ -15,11 +15,11 @@ function App() {
             <Navbar />
 
             <Switch>
-                <Route path="" exact>
+                <Route path="/" exact>
                     <Header />
                     <MainContent />
                 </Route>
-                <Route path="contact">
+                <Route path="/contact">
                     <Contact />
                 </Route>
             </Switch>
