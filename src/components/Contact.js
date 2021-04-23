@@ -79,31 +79,31 @@ function Contact() {
                         <ul class="dropdown-menu">
                             <li>
                                 <a class="dropdown-item" href="#">
-                                    Action
+                                    Country 1
                                 </a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="#">
-                                    Another action
+                                    Country 2
                                 </a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="#">
-                                    Something else here
+                                    Country 3
                                 </a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="#">
-                                    Separated link
+                                    Country 4
                                 </a>
                             </li>
                         </ul>
                         <input
-                            type="number"
-                            id="phone"
+                            type="text"
                             class="form-control"
+                            placeholder="Phone Number"
                             aria-label="Text input with dropdown button"
-                        ></input>
+                        />
                     </div>
                     <div className="mb-3">
                         <label for="Comments" class="form-label">

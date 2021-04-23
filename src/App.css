@@ -43,6 +43,10 @@
     background-color: #c2c2c2;
 }
 
+.center-alignment {
+    text-align: center;
+}
+
 .head-text {
     font-family: "Major Mono Display", monospace;
     text-align: center;

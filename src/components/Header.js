@@ -9,7 +9,7 @@ function Header() {
                     <div className="row align-items-center">
                         <div className="py-md-5">
                             <h1 className="head-text">Sahara Grace Kochi</h1>
-                            <p className="upper-text">
+                            <p className="upper-text center-alignment">
                                 Invested in Sahara Grace Kochi?{" "}
                                 <Link to="contact" className="link-dark">
                                     Contact Us
