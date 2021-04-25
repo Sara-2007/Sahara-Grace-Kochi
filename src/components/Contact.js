@@ -1,10 +1,39 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
+import Axios from "axios"
 
 function Contact() {
-    function handleSubmit(e) {
+    const [name, setName] = useState()
+    const [building, setBuilding] = useState()
+    const [apt, setApt] = useState()
+    const [email, setEmail] = useState()
+    const [phone, setPhone] = useState()
+    const [comments, setComments] = useState()
+
+    async function handleSubmit(e) {
         e.preventDefault()
 
-        alert("Thank you!")
+        var url =
+            "/contacted/" +
+            name +
+            "/" +
+            building +
+            "/" +
+            apt +
+            "/" +
+            email +
+            "/" +
+            phone +
+            "/" +
+            comments
+
+        console.log(url)
+
+        try {
+            await Axios.post(url)
+            console.log("YAYAYA! A USER!!!! 谢谢我!")
+        } catch (e) {
+            console.log("ERROR! ERROR! DANGER! DANGER!")
+        }
     }
 
     return (
@@ -21,6 +50,7 @@ function Contact() {
                             Name
                         </label>
                         <input
+                            onChange={e => setName(e.target.value)}
                             type="text"
                             class="form-control"
                             id="name"
@@ -33,6 +63,7 @@ function Contact() {
                             Block/Building
                         </label>
                         <input
+                            onChange={e => setBuilding(e.target.value)}
                             type="text"
                             class="form-control"
                             id="Block"
@@ -45,6 +76,7 @@ function Contact() {
                             Apartment Number
                         </label>
                         <input
+                            onChange={e => setApt(e.target.value)}
                             type="number"
                             class="form-control"
                             id="apt"
@@ -57,6 +89,7 @@ function Contact() {
                             Email address
                         </label>
                         <input
+                            onChange={e => setEmail(e.target.value)}
                             type="email"
                             class="form-control"
                             id="email"
@@ -99,6 +132,7 @@ function Contact() {
                             </li>
                         </ul>
                         <input
+                            onChange={e => setPhone(e.target.value)}
                             type="text"
                             class="form-control"
                             placeholder="Phone Number"
@@ -110,6 +144,7 @@ function Contact() {
                             Comments
                         </label>
                         <textarea
+                            onChange={e => setComments(e.target.value)}
                             class="form-control"
                             id="Comments"
                             placeholder="Write your message here....."

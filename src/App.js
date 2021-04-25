@@ -2,12 +2,15 @@ import logo from "./logo.svg"
 import "./App.css"
 import { BrowserRouter, Switch, Route } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.css"
+import Axios from "axios"
 
-import Header from "./components/Header"
-import Navbar from "./components/Navbar"
 import MainContent from "./components/MainContent"
 import Contact from "./components/Contact"
+import Header from "./components/Header"
+import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
+
+Axios.defaults.baseURL = "http://localhost:8080"
 
 function App() {
     return (
