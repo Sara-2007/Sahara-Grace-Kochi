@@ -10,7 +10,7 @@ import Header from "./components/Header"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 
-Axios.defaults.baseURL = "http://localhost:8080"
+Axios.defaults.baseURL = "https://enigmatic-harbor-81954.herokuapp.com"
 
 function App() {
     return (
