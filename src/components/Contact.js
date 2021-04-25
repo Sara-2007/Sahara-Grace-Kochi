@@ -28,9 +28,10 @@ function Contact() {
 
         console.log(url)
 
+        alert("Thank you for submitting!")
+
         try {
             await Axios.post(url)
-            console.log("YAYAYA! A USER!!!! 谢谢我!")
         } catch (e) {
             console.log("ERROR! ERROR! DANGER! DANGER!")
         }
