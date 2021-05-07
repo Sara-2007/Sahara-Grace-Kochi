@@ -1,7 +1,24 @@
 import React, { useEffect, useState } from "react"
 import Axios from "axios"
+import { Redirect } from "react-router"
+import Dropdown from "react-dropdown"
+
+import countries from "../country-codes"
 
 function Contact() {
+    const countryList = countries.list
+
+    var i = 0
+
+    var countryNames = []
+
+    for (i = 0; i < countryList.length; i++) {
+        var countryName = countryList[i].name
+        countryNames.push(countryName)
+    }
+
+    var defaultOption = countryNames[102]
+
     const [name, setName] = useState()
     const [building, setBuilding] = useState()
     const [apt, setApt] = useState()
@@ -30,6 +47,8 @@ function Contact() {
 
         alert("Thank you for submitting!")
 
+        return <Redirect to="/" />
+
         try {
             await Axios.post(url)
         } catch (e) {
@@ -43,110 +62,86 @@ function Contact() {
                 <br />
                 <h1 className="upper-text">
                     {" "}
-                    Contact Us <i class="bi bi-chat-dots-fill"></i>
+                    Contact Us <i className="bi bi-chat-dots-fill"></i>
                 </h1>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
-                        <label for="name" class="form-label">
+                        <label htmlFor="name" className="form-label">
                             Name
                         </label>
                         <input
                             onChange={e => setName(e.target.value)}
                             type="text"
-                            class="form-control"
+                            className="form-control"
                             id="name"
                             placeholder="Name"
                             required
                         ></input>
                     </div>
                     <div className="mb-3">
-                        <label for="Block" class="form-label">
+                        <label htmlFor="Block" className="form-label">
                             Block/Building
                         </label>
                         <input
                             onChange={e => setBuilding(e.target.value)}
                             type="text"
-                            class="form-control"
+                            className="form-control"
                             id="Block"
                             placeholder="Block/Building"
                             required
                         ></input>
                     </div>
                     <div className="mb-3">
-                        <label for="apt" class="form-label">
+                        <label htmlFor="apt" className="form-label">
                             Apartment Number
                         </label>
                         <input
                             onChange={e => setApt(e.target.value)}
                             type="number"
-                            class="form-control"
+                            className="form-control"
                             id="apt"
                             placeholder="Apartment Number"
                             required
                         ></input>
                     </div>
                     <div className="mb-3">
-                        <label for="email" class="form-label">
+                        <label htmlFor="email" className="form-label">
                             Email address
                         </label>
                         <input
                             onChange={e => setEmail(e.target.value)}
                             type="email"
-                            class="form-control"
+                            className="form-control"
                             id="email"
                             placeholder="name@example.com"
                             required
                         ></input>
                     </div>
-                    <label for="phone" class="form-label">
+                    <label htmlFor="phone" className="form-label">
                         Phone Number
                     </label>
-                    <div class="input-group mb-3">
-                        <button
-                            class="btn btn-outline-secondary dropdown-toggle"
-                            type="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                        >
-                            Country
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    Country 1
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    Country 2
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    Country 3
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    Country 4
-                                </a>
-                            </li>
-                        </ul>
+                    <div className="input-group mb-3">
+                        <Dropdown
+                            className="btn btn-outline-secondary"
+                            options={countryNames}
+                            value={defaultOption}
+                            placeholder="Country"
+                        />
                         <input
                             onChange={e => setPhone(e.target.value)}
                             type="text"
-                            class="form-control"
+                            className="form-control"
                             placeholder="Phone Number"
                             aria-label="Text input with dropdown button"
                         />
                     </div>
                     <div className="mb-3">
-                        <label for="Comments" class="form-label">
+                        <label htmlFor="Comments" className="form-label">
                             Comments
                         </label>
                         <textarea
                             onChange={e => setComments(e.target.value)}
-                            class="form-control"
+                            className="form-control"
                             id="Comments"
                             placeholder="Write your message here....."
                         ></textarea>

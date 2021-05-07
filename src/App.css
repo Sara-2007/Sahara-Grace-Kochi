@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Montserrat&display=swap");
 
+a {
+    color: #007bff;
+}
+
 .App {
     text-align: center;
 }
