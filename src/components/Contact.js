@@ -51,6 +51,7 @@ function Contact() {
 
         try {
             await Axios.post(url)
+            console.log(done)
         } catch (e) {
             console.log("ERROR! ERROR! DANGER! DANGER!")
         }
