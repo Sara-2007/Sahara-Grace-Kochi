@@ -30,7 +30,7 @@ function Contact() {
         e.preventDefault()
 
         var url =
-            "/contacted/" +
+            "https://enigmatic-harbor-81954.herokuapp.com/contacted/" +
             name +
             "/" +
             building +
